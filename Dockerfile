@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node
 LABEL maintainer="Igor Kolomiyets <igor.kolomiyets@iktech.io>"
 
 RUN addgroup -g 10000 jenkins

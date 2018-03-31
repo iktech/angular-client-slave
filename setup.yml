@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: ImageStream
+metadata:
+  name: angular-client-slave
+---
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: angular-client-slave
+  labels:
+    application: jenkins
+spec:
+  source:
+    type: Git
+    git:
+      uri: git@github.com:iktech/angular-client-slave.git
+    sourceSecret:
+      name: "github-secret"
+  strategy:
+    type: Docker
+    dockerStrategy:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: angular-client-slave:latest
+  triggers:
+    - type: ConfigChange
+    - type: ImageChange
+    - type: GitHub
+      github:
+        secret: "github-secret"
