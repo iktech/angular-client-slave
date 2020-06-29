@@ -1,4 +1,4 @@
-FROM node:10.18.0
+FROM node:12.18.1
 LABEL maintainer="Igor Kolomiyets <igor.kolomiyets@iktech.io>"
 
 #RUN groupadd -g 10000 jenkins
