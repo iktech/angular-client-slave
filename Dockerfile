@@ -1,4 +1,4 @@
-FROM node:12.18.1
+FROM node:14.11.0
 LABEL maintainer="Igor Kolomiyets <igor.kolomiyets@iktech.io>"
 
 #RUN groupadd -g 10000 jenkins
@@ -8,7 +8,7 @@ RUN mkdir -p /usr/local/lib/node_modules \
  && chown -R node:node /usr/local/bin \
  && mkdir -p /home/jenkins/.npm \
  && chown node:node /home/jenkins/.npm \
- && npm install -g @angular/cli
+ && npm install -g @angular/cli@10.1.2
 
 USER node
 
